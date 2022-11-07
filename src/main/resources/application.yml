@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: kafka-monitoring
+
+kafka:
+  bootstrapAddress: localhost:9092
+
