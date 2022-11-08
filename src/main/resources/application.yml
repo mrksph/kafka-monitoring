@@ -7,9 +7,35 @@ spring:
   cloud:
     config:
       enabled: false
+  jmx:
+    enabled: true
 
 kafka:
   bootstrapAddress: localhost:9092
   topicName: the-topic
   groupId: the-group-2
 
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+    web:
+      exposure:
+        include: metrics,info,health,prometheus
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    export:
+      jmx:
+        enabled: true
+  info:
+    env:
+      enabled: true
