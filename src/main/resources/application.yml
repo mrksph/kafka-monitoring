@@ -1,7 +1,15 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: kafka-monitoring
+  cloud:
+    config:
+      enabled: false
 
 kafka:
   bootstrapAddress: localhost:9092
+  topicName: the-topic
+  groupId: the-group-2
 
